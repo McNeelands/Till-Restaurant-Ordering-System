@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Be | Responsive HTML5 Portfolio Template</title>
+    <meta charset='utf-8'>
+    <meta content='Be is a responsive HTML5 Template suitable for any kind of business or freelance professional. Showcase your work, tell your story, get noticed online.' name='description'>
+    <meta content='1 day' name='revisit-after'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <link rel="shortcut icon" href="favicon.ico?v=5" type="image/x-icon">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <!-- Styles -->
+    <link href="/assets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style2.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <!-- HTML5 fallbacks -->
+    <!--[if lt IE 9]>
+    <script src="javascripts/html5shiv.js" type="text/javascript"></script>
+    <script src="javascripts/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body class='dark top-nav'>
+    <%= render 'menus/header' %>
+    <div class='container-fluid'>
+      <section id='start'>
+        <div class='row'>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 check-out-pnl">
+              <div class="panel panel-default chk-pnl">
+                  <div class="panel-heading chk-hdr-clr">
+                      <h3 class="text-center chk-hdr-txt-clr"><strong>Order Summary</strong></h3>
+                  </div>
+                  <div class="panel-body">
+                      <table class="table table-condensed">
+                          <thead>
+                              <tr>
+                                  <td><strong>Item Name</strong></td>
+                                  <td class="text-center"><strong>Item Price</strong></td>
+                                  <td class="text-center"><strong>Item Quantity</strong></td>
+                                  <td class="text-right"><strong>Total</strong></td>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <% @orders.each do |order| %>
+                              <tr>
+                                  <td class="item-name"><%= order.item.name %></td>
+                                  <td class="item-price text-center">$<%= order.item.price %></td>
+                                  <td class="quantity text-center">1</td>
+                                  <td class="total text-right">$<%= order.item.price %></td>
+                              </tr>
+                              <% end %>
+                              <tr>
+                                  <td class="highrow"></td>
+                                  <td class="highrow"></td>
+                                  <td class="highrow text-center"><strong>Subtotal</strong></td>
+                                  <td class="total-sub highrow text-right">$<%= @cart.subtotal %></td>
+                              </tr>
+                              <tr>
+                                  <td class="emptyrow"></td>
+                                  <td class="emptyrow"></td>
+                                  <td class="emptyrow text-center"><strong>HST</strong></td>
+                                  <td class="taxemptyrow text-right">$<%= @cart.hst %></td>
+                              </tr>
+                              <tr>
+                                  <td class="emptyrow"><i></i></td>
+                                  <td class="emptyrow"></td>
+                                  <td class="emptyrow text-center"><strong>Total</strong></td>
+                                  <td class="total-bill emptyrow text-right">$<%= @cart.total %></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+      </section>
+
+
+      <section id="checkout-section">
+        <div class='row'>
+          <div class='col-md-12 text-center'>
+
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" >
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="6RNT8A4HBBJRE">
+              <input class="pp-btn" type="image"
+                src="/assets/work/paypal.jpg"
+                name="submit" alt="PayPal - The safer, easier way to pay online!">
+              <img alt="" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif"
+                width="1" height="1">
+            </form>
+            <br>
+
+            <img src="/assets/work/pay.jpg" id="customButton" class="pp-btn pay-btn">
+
+        </div>
+      </section>
+
+    </div>
+    <script src="/assets/be/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="/assets/be/loader.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.mobile.custom.min.js" type="text/javascript"></script>
+    <script src="/assets/be/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="/assets/be/bootstrap.js" type="text/javascript"></script>
+    <script src="/assets/be/validation.js" type="text/javascript"></script>
+    <script src="/assets/be/waypoints.min.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.placeholder.js" type="text/javascript"></script>
+    <script src="/assets/be/tera-slider.js" type="text/javascript"></script>
+    <script src="/assets/be/tera-lightbox.js" type="text/javascript"></script>
+    <script src="/assets/be/functions.js" type="text/javascript"></script>
+  </body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Checkout</h4>
+      </div>
+      <div class="modal-body">
+        Thank you for dining with us, we hope to see you again!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var handler = StripeCheckout.configure({
+      key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+      image: '/img/documentation/checkout/marketplace.png',
+      locale: 'auto',
+      token: function(token) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+      }
+    });
+
+    $('#customButton').on('click', function(e) {
+     // Open Checkout with further options:
+     handler.open({
+       name: 'TILL',
+       description: 'FOOD',
+       amount: <%= @cart.total_in_cents %>
+     });
+     e.preventDefault();
+   });
+
+    // Close Checkout on page navigation:
+    $(window).on('popstate', function() {
+      handler.close();
+    });
+  </script>
+
+</html>

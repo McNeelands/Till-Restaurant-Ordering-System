@@ -1,0 +1,23 @@
+.delete-button {
+  width: 100%;
+}
+
+#each-item {
+  text-align: center;
+}
+
+#table-header {
+  text-align: center;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.request-bill {
+  width: 49%;
+}
+
+.stripe-button-el {
+  width: 49%;
+}

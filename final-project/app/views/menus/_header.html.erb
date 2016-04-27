@@ -1,0 +1,38 @@
+<header data-spy='affix'>
+  <div class='menu-trigger'>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+  </div>
+  <a class='brand transition' href='/' style='background-image:url(/assets/work/logo.png);'></a>
+  <nav id='main'>
+    <div class='nav'>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href='/restaurants'>Restaurants</a>
+        </li>
+        <li>
+          <a class='transition' href='#'>How It Works</a>
+        </li>
+        <li>
+          <a href='/admin/dashboard'>My Dashboard</a>
+        </li>
+        <li>
+          <a href='/orders/checkout'>Checkout</a>
+        </li>
+        <% if current_user %>
+        <li>
+          <%= link_to "Log out", logout_path, method: "delete" %>
+        </li>
+        <% else %>
+        <li>
+          <a data-toggle="modal" data-target="#loginModal">Sign In</a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

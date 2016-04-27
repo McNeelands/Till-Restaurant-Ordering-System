@@ -1,0 +1,57 @@
+<head>
+	<link href="/assets/foundation.css" rel="stylesheet">
+	<link href="/assets/menus.css" rel="stylesheet">
+	<link href="/assets/bootstrap.css" rel="stylesheet">
+</head>
+<br>
+<br>
+
+<body class='dark top-nav' id="menu-body">
+	<br>
+	<br>
+	<div id="menu-container">
+	<div class="special">
+	<section class="menu menu-3">
+			<div class="tabbed-menu offix">
+				<div class="row">
+					<div class="medium-12 medium-centered columns text-center">
+						<ul class="menu-filters">
+							<!-- <li data-menu-type="entree" class="active"><span>Entree</span></li> -->
+	            <% @menus.each do |menu| %>
+							<li data-menu-type="<%= menu.menu_name %>"><span><%= menu.menu_name %></span></li>
+	            <% end %>
+							</ul>
+					</div>
+				</div>
+	      <br>
+				<div class="row">
+					<div class="medium-9 medium-centered columns text-center">
+	          <% @menus.each do |menu| %>
+						<div data-menu-type="<%= menu.menu_name %>" class="narrow-menu active">
+	            <!-- show menu items within menu_name -->
+	            <% menu.items.each do |item| %>
+	            <div class="menu-item">
+	              <a data-toggle="modal" class="modal-button" data-menu-id="<%= menu.id %>" data-item-id="<%= item.id %>" data-target="#myModal">
+	              <span class="title"><%= item.name %></span>
+	                </a>
+	                <span class="price"><%= item.price %></span>
+								  <p>
+									  <%= item.description %>
+									  <span class="dietary sub-title">V</span>
+								  </p>
+									<hr>
+							  </div><!--end of individual menu item-->
+	            <% end %>
+						</div>
+	          <% end %>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+</body>
+
+
+  <%= render 'modal' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

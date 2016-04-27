@@ -1,0 +1,232 @@
+<head>
+  <link href="/assets/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/style2.css" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+<body class="dark bottom-nav">
+  <%= render 'menus/header' %>
+  <div class='container-fluid'>
+    <div class='slider'>
+      <ul class='slides'>
+        <li class='slide'>
+          <div class='jumbotron'>
+            <div class='bg' style='background-image: url(/assets/work/food.jpg);'></div>
+            <div class='content vcenter'>
+              <div class='row'>
+                <div class='col-md-6 col-md-offset-3 text-center'>
+                  <h1 class="index-hdr-text" id="indx-txt">Order, Pay Directly on Your Phone.</h1>
+                  <a class='btn anchor index-hdr-text' href='/restaurants'>Explore TILL</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <section id='start'>
+      <div class='row'>
+        <div class='col-md-6 mobile-center'>
+          <h4 class='subtitle'>HOW?</h4>
+          <h2>TILL Is Easy</h2>
+        </div>
+        <div class='col-md-2 text-center service'>
+          <div><img class="grey-icon icon icons8-NFC-Checkpoint" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAADZUlEQVRoQ+2agZGOMRCG36uADlDBUQEqQAVHBagAFaACVHBUgApQASpABcxzk4zM+pLsJt/N3G+yM9/c/TPJZt993918f/IfaV+7LOmmpOuSbkm6mp5ylW+SeD5I+izpo6Sfe4VxtJOjE0l30zPi8q0knjcjk8s5M4Bg46GkR5L4fw+DqReSXo6yNgoINp5vyGkPUPhAko8TayGfUUAwAZD7jVW+p0CoETLOQ61g1BY+eKgxEnOl4et1AuausQgggnifgrIx/JLE4jw5eG9mAUmCkO+W4e+2V4JeQHSrT5VaoZCfJpl4QWyNYw380GCsIUFA8bdpXkBk3i6EtJBMlJFeTDBGx7NSJHEtqZ/59QKiHthfsn1JNVDTNtm+kwAjVYLEAM8cAn7XyDhzWPO4WJP9irrbhSECYoFLqaXSqreMcTSN7sJpMj7pZjWWszKoUXx21eBliPVzd6rpGCA1oL3EsvcAbMtgO3fLnh+35FqOWt2vG0AxALbuebtZzXGEoZoPWvmWxKgRagWZlPsQsqSZUGPWGHcjkgU7dhYQgZ0apzQMpEfGW0YSkFpZ+IwHULdW9mDolaQHxhFyo6ZoFliv+9k4bDej+GHQ1intmgbRtQhDv5NTCwqWYISssjG6X1OK6GAKIPxFpqUBhmS6YnUNSt4BhJEpC6qWOToU3a/ch+hm3R0/Ocxg+OiK1TXIAPKCqr0uwSB10gNVgjl3QJ4FkM5WJ2MuHRCptiwrIo9xJd81aIMhD6AfjS9+sHPt0AAhrdz9bOy82CLJg2Lov5McDNDKLUu1vcaydeFqiAABlfcYPgOQPavX4Rh7IQF1yuSwamgGzGIotFkN7kOLIZOB1RQ8ry9l0oYyNqG7ofXO811uAsvZ1AVoSc5oKCLXEfktyS3JLcmNVM7fOauGVg0ZBU2dQXfUyMEkV6ClubYJ16DK14e5ConPdsXqGrQA/Zt9Tno4LME4JKmd17V4cyXfNWiSIcDka0Vc2SsYr/hcsboGTQJ6lq5ZysC5dnniRZLGuWJ1DUoOOVOzt22emPYAxEVavpJprhkBhPa564kaZ9wczOeLMCT3NfgLLu6jdr/BA8goS/lnY7kpRH6O5mYH5xGGckHbX3hEGYuMj97ZhgHlYLhdQ4IjNeUBBBDavEtmpcM/+8HKNbwXSRAAAAAASUVORK5CYII=" width="72" height="72"></div>
+          <h3 class='subtitle'>order</h3>
+        </div>
+        <div class='col-md-2 text-center service'>
+          <div><img class="grey-icon icon icons8-Dining-Room" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACYklEQVRoQ+2ZgTFEQQyG/6uADlABJeiADlABOqACVIAK0AEVoAJ0QAXMb96au73svmSTd+dmXmbMmLns7v8l2by8uwlW3CYrrh8jwLIzOGbgP2fgGsATgJsFiNwDsA9gF8Bmd947gEcA5wD4v2ilEroEcNytOBoQgoIZqCS6pPMEwJX0oQSwA+A5cx4C4gIAhWntFAADO2MSAEvmQNg1EuKuKxmt+OS3lZeTBMDoMwuSRUCwZA6tyjv/23ytBPDds7kHgheV0W81XmZm4c8kADptDATxpriwfXAzmiWAewBsa31mzQTLhuXjtV4Ay0EWiFJzsAB9AVjvKyF+/gJgW7mzFiKifB7y7lV6kLEL8Sm4FgjR1xw0R80FqzbMRUN4AVg+fGJ/akoo+URCaLpbLQtiqWrG6SgIzyWee4AlUg0AfSMgOPdw/rHaazelzpSOFcAKkderpTVPAzLyBBfF01GbgbQpezC7U63FUjzHZLZiWov4DwBnmjHeCkBBNQiteI7GLEvORqlVcy2Dw0mAf8WoW7pQqV4lCK147YNPdVdaMiCV01LEt9yBPCrMBNPNi6ap+dDoRwDkQJoLGwrhKaEW8WlNGEQUQCnyFEqT3gNCICIAauLTd0oaH1XXyZ28ABZhFl81jAegRVDLmipMK4BHiGftHEwLQISAiD1+YawAYQdXhjxTd7IARIpPpeDeUwvgPqhyE117awBcByj7YfMZGgDpXdZUpw6I4rtw2lMDQN9piCHES3eiV7y1CxGCb0xD/+TEcuIrqeoreG0GlFWweLcRYPExnz1xzMCYAWcEfgAiUJcxq+W16gAAAABJRU5ErkJggg==" width="72" height="72"></div>
+          <h3 class='subtitle'>eat</h3>
+        </div>
+        <div class='col-md-2 text-center service'>
+          <div><img class="grey-icon icon icons8-Bank-Cards" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB90lEQVR4Xu2a4VHDMAyFXzeADdgAmAAYgQmADRiFDYAJYAPYAJiAEWADON2RO9c4cSWToMivP5vYlT492arlDTr/bDr3HwRABXROgCnQuQC4CDIFmALTBC4AXAM4cgrqFcANgHurfWMpsAfgybHjub8C4gzApxbEGICXFTk/+CwQjv8CwCWAW+1ETt6/AnCnsaWkgDz6kl+yDqjlpTHE8K6k6SOAk2SsWgUlAF+ZMfsOnR9MFAgfmb2qrX0XAKoJDZFsHZIHTGUvARTwjxHNv2+N3BLjq3WCRgFrBJBukcU6oRcAAqK4Q/QEQCD8qhM0AJbIWctvjK1ZO9UJkQEIzGqdEB2AQJisEwhAUQdY8nOJMdrteSvoERVQg04AKSEqIOAakAeVu8DUeUHEFKACsogzBZgC2wTC1wFcA7gGbBPgIti6CHpujBwAeK80RtQKkMPDw2TSZwDnDrtDctrzAOA0sfWt0NRVA4jWHFUDGI6QUxXU/mN7eF6KvulIbDhMFOmvBYI4L6lQ6mCbFDBEVNJBWuNeQYjjckVm6k5AE4CStJu6sf+QKwSgrQNqQVrTBYpqnaC6TPBDJlSdYAEQqk6wAAhVJ1gBSBkaok6wAghTJ7QCqO0Y7p8TgPsQzWwgFTAzYPfTUwHuQzSzgVTAzIDdT9+9Ar4BDRqFQXbmhvoAAAAASUVORK5CYII=" width="72" height="72"></div>
+          <h3 class='subtitle'>pay</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class='bg-darker'>
+      <div class='bg' style='background-image: url("https://images.unsplash.com/reserve/DHHQbqc0RrWVf0uDNe5E_The%20Litte%20Cafe.jpg?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1300");'></div>
+      <div class='content'>
+        <div class='row'>
+          <div class='col-md-8 col-md-offset-2'>
+            <h1 class="text-center">Ordering Made Easy</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class='gray text-center'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <h2>DINE SIMPLE</h2>
+        </div>
+      </div>
+    </footer>
+
+    <section class='no-spacing col-3' id='grid'>
+      <a class='item abstract lightbox' href='https://www.youtube.com/embed/vSkb0kDacjs' style='background-image: url("https://images.unsplash.com/photo-1451421924504-c52d431cdad5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=9b4548215e3b20efbcabc095bf0e94b2");'>
+        <div class='caption'>
+          <h5 class='extra'>YouTube</h5>
+          <div class='titles'>
+            <h3 class='title'>YouTube example</h3>
+            <h4 class='subtitle'>This is an example subtitle</h4>
+          </div>
+        </div>
+      </a>
+      <a class='item abstract lightbox' href='//player.vimeo.com/video/44228708' style='background-image: url("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/XCIJ0QVBK8.jpg");'>
+        <div class='caption'>
+          <h5 class='extra'>Vimeo</h5>
+          <div class='titles'>
+            <h3 class='title'>Vimeo example</h3>
+            <h4 class='subtitle'>This is an example subtitle</h4>
+          </div>
+        </div>
+      </a>
+      <a class='item threedee typography lightbox' href='assets/work/03.jpg' style='background-image: url("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/I5KW3C45TT.jpg");'>
+        <div class='caption'>
+          <h5 class='extra'>Some extra field</h5>
+          <div class='titles'>
+            <h3 class='title'>Romeo &amp; Juliet</h3>
+            <h4 class='subtitle'>This is an example subtitle</h4>
+          </div>
+        </div>
+      </a>
+      <!-- <a class='item threedee lightbox' href='assets/work/04.jpg' style='background-image: url("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/XASGQ1HNR4.jpg");'>
+      <div class='caption'>
+      <h5 class='extra'>Some extra field</h5>
+      <div class='titles'>
+      <h3 class='title'>American Express</h3>
+      <h4 class='subtitle'>This is an example subtitle</h4>
+    </div>
+  </div>
+</a>
+<a class='item lightbox threedee' href='assets/work/05.jpg' style='background-image: url("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/A6FE2C3A25.jpg");'>
+<div class='caption'>
+<h5 class='extra'>Some extra field</h5>
+<div class='titles'>
+<h3 class='title'>Sting banana</h3>
+<h4 class='subtitle'>This is an example subtitle</h4>
+</div>
+</div>
+</a>
+<a class='item lightbox typography' href='assets/work/08.jpg' style='background-image: url("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/89KAK10OJI.jpg");'>
+<div class='caption'>
+<h5 class='extra'>Some extra field</h5>
+<div class='titles'>
+<h3 class='title'>To the crazy ones</h3>
+<h4 class='subtitle'>This is an example subtitle</h4>
+</div>
+</div>
+</a>
+</section> -->
+
+<!-- <section class='bg-dark'>
+<div class='content row'>
+<div class='col-md-6 col-md-offset-3'>
+<h2>Visions</h2>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a super short <a href="#">passage of Lorem Ipsum</a>, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures.</p>
+</div>
+</div>
+</section> -->
+
+<!-- <section class='bg-darker'>
+<div class='bg' style='background-image: url(assets/work/13.jpg);'></div>
+<div class='row'>
+<div class='col-md-10'>
+<blockquote class='text-center'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</blockquote>
+</div>
+<div class='col-md-2 mobile-center'>
+<img style="width: 100px;" alt="" src="assets/logo-b.svg" />
+</div>
+</div>
+</section> -->
+
+<footer class='gray text-center'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <a class='icon fa fa-github' href='https://github.com/McNeelands'></a>
+      <a class='icon fa fa-github' href='https://github.com/JustinLC'></a>
+      <a class='icon fa fa-github' href='https://github.com/davesousa'></a>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='copy'>&copy; A Project by Students at Lighthouse Labs.</div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<!-- Modal LOGIN -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <br>
+        <h2 class="text-center"><img src="/assets/work/logo_dark.png" class="modal_logo"><br></h2>
+      </div>
+      <div class="modal-body row text-center">
+        <h6 class="text-center">Sign In</h6>
+        <%= form_for(:session, url: login_path, :html => { :id => "log_in_form" }) do |f| %>
+        <%= f.email_field :email, class: "log_in_form_fields", :placeholder => "Email" %>
+        <br></br>
+        <%= f.password_field :password, class: "log_in_form_fields", :placeholder => "Password" %>
+        <br></br>
+        <%= f.submit "Login", class: "log_in_btn_submit" %>
+        <% end %>
+      </div>
+      <a data-dismiss="modal" data-toggle="modal" data-target="#signupModal" id="new_usr_link"><p class="text-center">New? Sign up.</p></a>
+      <div class="modal-footer">
+        <h6 class="text-center">Thanks for checking out TILL.</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal SIGNUP -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="text-center"><img src="/assets/work/logo.png" class="modal_logo"></h2>
+      </div>
+      <div class="modal-body row text-center">
+        <h6 class="text-center">Sign up for TILL</h6>
+        <%= form_for(@user) do |f| %>
+        <%= f.text_field :first_name, class: "log_in_form_fields", :placeholder => "First name" %>
+        <br></br>
+        <%= f.text_field :last_name, class: "log_in_form_fields", :placeholder => "Last name" %>
+        <br></br>
+        <%= f.email_field :email, class: "log_in_form_fields", :placeholder => "Email" %>
+        <br></br>
+        <%= f.password_field :password, class: "log_in_form_fields", :placeholder => "Password" %>
+        <br></br>
+        <%= f.submit "Create an account", class: "log_in_btn_submit" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <h6 class="text-center">No Spam. We Promise!</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/be/jquery.min.js" type="text/javascript"></script>
+<script src="/assets/be/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="/assets/be/loader.js" type="text/javascript"></script>
+<script src="/assets/be/jquery.mobile.custom.min.js" type="text/javascript"></script>
+<script src="/assets/be/isotope.pkgd.min.js" type="text/javascript"></script>
+<script src="/assets/be/bootstrap.js" type="text/javascript"></script>
+<script src="/assets/be/validation.js" type="text/javascript"></script>
+<script src="/assets/be/waypoints.min.js" type="text/javascript"></script>
+<script src="/assets/be/jquery.placeholder.js" type="text/javascript"></script>
+<script src="/assets/be/tera-slider.js" type="text/javascript"></script>
+<script src="/assets/be/tera-lightbox.js" type="text/javascript"></script>
+<script src="/assets/be/functions.js" type="text/javascript"></script>
+</body>

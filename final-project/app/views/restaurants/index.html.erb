@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Be | Responsive HTML5 Portfolio Template</title>
+    <meta charset='utf-8'>
+    <meta content='Be is a responsive HTML5 Template suitable for any kind of business or freelance professional. Showcase your work, tell your story, get noticed online.' name='description'>
+    <meta content='1 day' name='revisit-after'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <link rel="shortcut icon" href="favicon.ico?v=5" type="image/x-icon">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <!-- Styles -->
+    <link href="/assets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style2.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 fallbacks -->
+    <!--[if lt IE 9]>
+    <script src="javascripts/html5shiv.js" type="text/javascript"></script>
+    <script src="javascripts/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body class='dark top-nav'>
+    <%= render 'menus/header' %>
+    <div class='container-fluid'>
+      <section class='gray'>
+        <div class='row'>
+          <div class='col-md-4 mobile-center'>
+            <h2>Restaurants On TILL</h2>
+          </div>
+          <div class='col-md-8'>
+            <p>TILL lets you discover new restaurants, order, request help from a waiter, and even pay from your phone at some of the hottest restaurants in Toronto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class='top-line'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class='filter-container stick' data-spy='affix'>
+              <div class='filter-trigger'>Filters</div>
+              <ul class='filters'>
+                <li>
+                  <button data-filter='*'>All</button>
+                </li>
+                <li>
+                  <button data-filter='.casual'>Casual</button>
+                </li>
+                <li>
+                  <button data-filter='.fine'>Fine Dining</button>
+                </li>
+                <li>
+                  <button data-filter='.top'>Top Rated</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id='grid'>
+          <% @restaurants.each do |restaurant| %>
+          <a class='item transition casual' href="restaurants/<%= restaurant.id %>/menus" style='background-image: url("<%= restaurant.restaurant_url %>");'>
+            <div class='caption'>
+              <h5 class='extra'>Restaurant Type: Casual</h5>
+              <h5 class='price'>Restaurant Price: $$</h5>
+              <div class='titles'>
+                <h3 class='title'><%= restaurant.restaurant_name %></h3>
+                <h4 class='subtitle'>Restaurant Description: Lorem Ipsum, Lorem Ipsum Lorem Ipsum Lorem Ipsum.</h4>
+              </div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+      </section>
+      <section class='gray'>
+        <div class='row'>
+          <div class='col-md-6 col-md-offset-3 text-center'>
+            <div class='title-block'>
+              <h2>Don't see your favourite restaurant?</h2>
+            </div>
+            <p>We are always looking for new restaurants to join TILL. If your favourite isn't already here, let us know, we will reach out to them and hopefully they want to join. Letting them know about how uch you love TILL never hurts.</p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class='row text-center'>
+          <div class='col-md-12'>
+            <a class='icon fa fa-twitter' href='#'></a>
+            <a class='icon fa fa-behance' href='#'></a>
+            <a class='icon fa fa-codepen' href='#'></a>
+            <a class='icon fa fa-stumbleupon' href='#'></a>
+            <a class='icon fa fa-facebook' href='#'></a>
+            <a class='icon fa fa-linkedin' href='#'></a>
+          </div>
+        </div>
+    </div>
+    <script src="/assets/be/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="/assets/be/loader.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.mobile.custom.min.js" type="text/javascript"></script>
+    <script src="/assets/be/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="/assets/be/bootstrap.js" type="text/javascript"></script>
+    <script src="/assets/be/validation.js" type="text/javascript"></script>
+    <script src="/assets/be/waypoints.min.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.placeholder.js" type="text/javascript"></script>
+    <script src="/assets/be/tera-slider.js" type="text/javascript"></script>
+    <script src="/assets/be/tera-lightbox.js" type="text/javascript"></script>
+    <script src="/assets/be/functions.js" type="text/javascript"></script>
+  </body>
+</html>

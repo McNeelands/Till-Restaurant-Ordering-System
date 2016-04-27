@@ -1,0 +1,9 @@
+<%= form_for([:admin, @menu, @menu.items.build]) do |f| %>
+	<%= f.text_field :name, placeholder: "Name", class: "form_fields_create" %>
+  <%= f.text_field :price, placeholder: "Price", class: "form_fields_create" %>
+  <%= f.text_field :description, placeholder: "Description", class: "form_fields_create" %>
+  <%= f.hidden_field :menu_id %>
+	<%= f.file_field :url, class: "inputfile" %>
+		<%= f.label :url, "Upload Image" %>
+	<%= f.submit :Submit, class: "form_fields_submit" %>
+<% end %>

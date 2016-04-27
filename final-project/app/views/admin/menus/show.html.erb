@@ -1,0 +1,22 @@
+<h2 class="todo_list_title"><%= @menu.menu_name %></h2>
+
+
+<div id="todo_items_wrapper">
+  <ul>
+	<% @menu.items.each do |item| %>
+  <a href="/admin/menus/<%= item.menu_id %>/items/<%= item.id %>/edit">
+  <li>
+    <%= item.name %>
+  </li>
+
+</a>
+
+<li><a href="/menus/<%= item.menu_id %>/items/<%= item.id %>/edit">EDIT</a></li>
+
+  <br>
+  <% end %>
+  </ul>
+	<div id="form">
+		<%# render "admin/items/form" %>
+	</div>
+</div>

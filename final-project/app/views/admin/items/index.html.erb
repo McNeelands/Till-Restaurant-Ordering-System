@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Be | Responsive HTML5 Portfolio Template</title>
+    <meta charset='utf-8'>
+    <meta content='Be is a responsive HTML5 Template suitable for any kind of business or freelance professional. Showcase your work, tell your story, get noticed online.' name='description'>
+    <meta content='1 day' name='revisit-after'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <link rel="shortcut icon" href="favicon.ico?v=5" type="image/x-icon">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <!-- Styles -->
+    <link href="/assets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style2.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 fallbacks -->
+    <!--[if lt IE 9]>
+    <script src="javascripts/html5shiv.js" type="text/javascript"></script>
+    <script src="javascripts/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body class='dark top-nav'>
+    <%= render 'menus/header' %>
+    <div class='container-fluid'>
+      <section class='top-line'>
+        <div class='col-3' id='grid'>
+          <% @items.each do |item| %>
+          <a class='item transition abstract' href='portfolio-single.html' style='background-image: url("<%= item.url_file_name %>");'>
+            <div class='caption'>
+              <h5 class='extra'><%= item.price %></h5>
+              <div class='titles'>
+                <h3 class='title'><%= item.name %></h3>
+                <h4 class='subtitle'><%= item.description %></h4>
+              </div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+      </section>
+      <a data-toggle="modal" data-target="#ItemModal"><section>
+        <div class='bg faded'></div>
+        <div class='content'>
+          <div class='row'>
+            <div class='col-md-12 text-center'>
+              <h2>Create New Item +</h2>
+            </div>
+          </div>
+        </div>
+      </section></a>
+      <footer class='gray text-center'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <a class='icon fa fa-twitter' href='#'></a>
+            <a class='icon fa fa-behance' href='#'></a>
+            <a class='icon fa fa-codepen' href='#'></a>
+            <a class='icon fa fa-stumbleupon' href='#'></a>
+            <a class='icon fa fa-facebook' href='#'></a>
+            <a class='icon fa fa-linkedin' href='#'></a>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class='copy'>&copy; 2015 Be. All Rights Reserved.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal fade" id="ItemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h2 class="text-center"><img src="/assets/work/logo_dark.png" class="modal_logo"><br></h2>
+          </div>
+          <div class="modal-body row text-center">
+            <h4 class="text-center">Create Item</h4>
+            <%= render 'form' %>
+          </div>
+          <div class="modal-footer">
+            <h6 class="text-center">Sweatpants<br><br>-Adam</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/be/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="/assets/be/loader.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.mobile.custom.min.js" type="text/javascript"></script>
+    <script src="/assets/be/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="/assets/be/bootstrap.js" type="text/javascript"></script>
+    <script src="/assets/be/validation.js" type="text/javascript"></script>
+    <script src="/assets/be/waypoints.min.js" type="text/javascript"></script>
+    <script src="/assets/be/jquery.placeholder.js" type="text/javascript"></script>
+    <script src="/assets/be/tera-slider.js" type="text/javascript"></script>
+    <script src="/assets/be/tera-lightbox.js" type="text/javascript"></script>
+    <script src="/assets/be/functions.js" type="text/javascript"></script>
+  </body>
+</html>
